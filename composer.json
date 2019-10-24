@@ -1,0 +1,21 @@
+{
+    "name": "sympla/double-deuce",
+    "authors": [
+        {
+            "name": "Fabrício Cunha",
+            "email": "baricio@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "DoubleDeuce\\": "src/",
+            "Tests\\": "tests/"
+        }
+    }
+}
