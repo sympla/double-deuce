@@ -65,7 +65,7 @@ abstract class RemessaAbstract
 
     public function createFooter(RemessaFooterAbstract $bankFooter)
     {
-        $bankFooter->setTotalSegments($this->getTotalSegments());
+        $bankFooter->setTotalSegments($this->getTrailerLote());
         $bankFooter->setTotalToPay($this->getTotalToPay());
         return $this->createLine(... array_values($bankFooter->getSequence()));
     }
@@ -91,6 +91,14 @@ abstract class RemessaAbstract
         $header = 2;
         $footer = 2;
         $total = $this->countSegments + $header + $footer;
+
+        return $total;
+    }
+
+    protected function getTrailerLote()
+    {
+        $header = 2;
+        $total = $this->countSegments + $header;
 
         return $total;
     }
